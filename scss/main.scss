@@ -1,0 +1,34 @@
+// 1. ABSTRACTS (პროექტის პარამეტრები - პირველ რიგში!)
+// ვიყენებთ 'as *', რომ სხვა ფაილებში ცვლადებს პირდაპირ მივწვდეთ
+@use "./abstracts/variables" as *; 
+@use "./abstracts/mixins" as *;
+@use "./abstracts/fonts";
+
+// 2. BASE (საბაზისო სტილები და რესეტი)
+@use "./base/reset";
+
+// 3. COMPONENTS (პატარა დეტალები - თუ გაქვს შიგნით ფაილები შექმნილი)
+@use "./components/buttons";
+@use "./components/cards";
+
+// 4. LAYOUT (საიტის დიდი სექციები)
+@use "./layout/header";
+@use "./layout/hero";
+@use "./layout/services";
+@use "./layout/about";
+@use "./layout/footer";
+
+// 5. PAGES (კონკრეტული გვერდები)
+@use "./pages/home";
+
+// გლობალური პარამეტრები
+html {
+    font-size: 62.5%; // 1rem = 10px (აადვილებს მუშაობას)
+}
+
+body {
+    // აქ უკვე ვიყენებთ ცვლადებს _variables.scss-იდან
+    font-family: $ff-poppins-reg; 
+    font-size: $fs-primary-m; 
+    line-height: 1.6;
+}
