@@ -1,3 +1,123 @@
+.contact-us {
+  font-family: "$ff-poppins-reg";
+  margin: 0 auto;
+  width: 90%;
+}
+.contact-us-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  padding: 2.4rem 1.3rem;
+  gap: 1.6rem;
+  background-color: #E8DB84;
+  border-radius: 1rem;
+}
+.contact-us-header {
+  font-family: "$ff-poppins-reg";
+  color: #000000;
+  text-align: center;
+}
+.contact-us-header h2 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin: 0;
+}
+.contact-us-header p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.contact-us-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem 2.4rem;
+  gap: 1.2rem;
+}
+.contact-us input {
+  width: 80%;
+  padding: 2rem 2.4rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: #FFFFFF;
+  color: #1E1E1E;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.contact-us .input-mail {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 2.4rem;
+  gap: 1.2rem;
+}
+.contact-us .description {
+  padding: 2rem 2.4rem;
+}
+.contact-us .description textarea {
+  height: 20.7rem;
+  width: 80%;
+  padding: 2rem 2.4rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: #FFFFFF;
+  color: #1E1E1E;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.contact-us-btn {
+  display: flex;
+  justify-self: center;
+  border-radius: 0.8rem;
+}
+.contact-us-btn button {
+  width: 17.6rem;
+  height: 5.4rem;
+  background-color: #052A44;
+  padding: 1.5rem 4.3rem;
+  border-radius: 0.8rem;
+  gap: 1rem;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-us-btn:hover {
+  background-color: #183B56;
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .contact-us {
+    padding: 4rem 3.2rem;
+    gap: 3.2rem;
+  }
+  .contact-us-header h2 {
+    font-size: 4.2rem;
+    font-weight: 600;
+  }
+  .contact-us-header p {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  .contact-us-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 2.4rem;
+    gap: 1.2rem;
+  }
+  .contact-us .input-mail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2.4rem;
+    gap: 1.2rem;
+  }
+  .contact-us .description {
+    padding: 1.9rem 2.4rem;
+  }
+  .contact-us .description textarea {
+    width: 90%;
+  }
+}
 html {
   font-size: 62.5%;
 }
