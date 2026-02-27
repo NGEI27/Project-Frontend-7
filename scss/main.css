@@ -1,3 +1,99 @@
+.footer {
+  font-family: "Poppins", sans-serif;
+  padding: 2rem 1rem;
+}
+.footer-cont {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-cont-careerpath {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 2.4rem;
+}
+.footer-cont-careerpath h3 {
+  font-size: 2rem;
+  color: #052A44;
+  font-weight: 500;
+  margin: 0 0 0.8rem 0;
+}
+.footer-cont-careerpath p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #071210;
+  margin: 0 0 0.8rem 0;
+}
+.footer-cont-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.footer-cont-social p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #071210;
+  margin: 0 0 0.8rem 0;
+}
+.footer-cont-social {
+  gap: 0.9rem;
+}
+.footer-cont-social-icon-link {
+  display: inline-flex;
+  justify-content: center;
+  padding: 1.6rem;
+  width: 3.3rem;
+  height: 3.3rem;
+  border: 0.5px solid #052A44;
+  border-radius: 50%;
+}
+.footer-cont-social-icon-link img {
+  display: block;
+  width: 100%;
+}
+.footer-cont-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.footer-cont-contact p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #071210;
+  margin: 0 0 0.8rem 0;
+}
+.footer-cont-contact {
+  gap: 0.9rem;
+  margin: 2.4rem 4.6rem 2.4rem 4.6rem;
+}
+.footer hr {
+  display: none;
+}
+.footer .copyright {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer .footer-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer .footer-careerpath {
+    text-align: left;
+  }
+  .footer hr {
+    display: block;
+    width: 90%;
+    margin-top: 4rem;
+  }
+  .footer .copyright {
+    display: block;
+    text-align: center;
+    margin-top: 2.4rem;
+  }
+}
+
 html {
   font-size: 62.5%;
 }
