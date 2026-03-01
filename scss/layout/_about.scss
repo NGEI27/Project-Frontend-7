@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.about-section {
+    padding: 8rem 0;
+    
+    .section-header h2 {
+        font-size: 3.6rem;
+        text-align: center;
+        margin-bottom: 5rem;
+        color: $primary-blue;
+    }
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @include respond-to("desktop") {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-card {
+        padding: 4rem 3rem;
+        background: rgba($primary-blue, 0.03);
+        border-radius: 2rem;
+        text-align: center;
+        transition: $transition;
+
+        &:hover {
+            transform: translateY(-1rem);
+            background: rgba($accent-yellow, 0.1);
+        }
+
+        .icon-box { font-size: 4.5rem; margin-bottom: 2rem; }
+        h3 { font-size: 2.2rem; color: $primary-blue; margin-bottom: 1.5rem; }
+        p { font-size: 1.6rem; color: $text-gray; }
+    }
+}

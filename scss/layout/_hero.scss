@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    gap: 4rem;
+    text-align: center;
+
+    @include respond-to("desktop") {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12rem 0;
+    }
+
+    .hero-content {
+        .hero-title {
+            font-size: 4.5rem; // 45px
+            color: $primary-blue;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+
+            @include respond-to("desktop") { font-size: 6.4rem; }
+        }
+
+        .hero-description {
+            font-size: 1.8rem;
+            color: $text-gray;
+            margin-bottom: 3rem;
+            max-width: 50rem;
+            margin-inline: auto;
+            @include respond-to("desktop") { margin-inline: 0; }
+        }
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 50rem;
+        border-radius: 2rem;
+        border-bottom: 1rem solid $accent-yellow;
+    }
+}
+.btn-primary {
+    display: inline-block;
+    padding: 1.6rem 4rem;
+    background-color: $primary-blue;
+    color: $white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+        background-color: $accent-yellow;
+        color: $primary-blue;
+        transform: scale(1.05);
+    }
+}
