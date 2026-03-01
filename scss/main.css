@@ -39,16 +39,20 @@
 .footer-cont-social {
   gap: 0.9rem;
 }
-.footer-cont-social-icon-link {
-  display: inline-flex;
-  justify-content: center;
-  padding: 1.6rem;
-  width: 3.3rem;
-  height: 3.3rem;
-  border: 0.5px solid #052A44;
+.footer-cont a {
+  display: inline-block;
+  padding: 1rem;
+  margin: 0.9rem;
+  border: 2px solid #071210;
   border-radius: 50%;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.footer-cont-social-icon-link img {
+.footer-cont a:hover, .footer-cont a:focus {
+  color: #fff;
+}
+.footer-cont a img {
   display: block;
   width: 100%;
 }
@@ -72,6 +76,9 @@
 }
 .footer .copyright {
   display: none;
+}
+.footer {
+  /* desktop styles */
 }
 @media (min-width: 768px) {
   .footer .footer-cont {
