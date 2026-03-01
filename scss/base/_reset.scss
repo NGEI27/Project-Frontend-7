@@ -1,0 +1,37 @@
+html {
+    font-size: 62.5%; // 1rem = 10px
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    transition: $transition;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+// Dark Mode ლოგიკა
+#theme-switch:checked ~ .page-wrapper {
+    background-color: $dark-bg;
+    color: $white;
+
+    .hero-title, .section-header h2, .about-card h3 {
+        color: $white;
+    }
+
+    .hero-description, .about-card p {
+        color: rgba($white, 0.7);
+    }
+    
+    .sun-icon { display: none; }
+    .moon-icon { display: block !important; }
+}
+
+.moon-icon { display: none; }

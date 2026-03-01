@@ -1,0 +1,538 @@
+/* =========================================
+   1. BASE & RESET (1rem = 10px)
+   ========================================= */
+html {
+    font-size: 62.5%; /* 1rem ხდება 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* =========================================
+   2. DARK MODE LOGIC (Theme Switcher)
+   ========================================= */
+/* როცა თემის ჩეკბოქსი მონიშნულია */
+#theme-switch:checked ~ .page-wrapper {
+    background-color: #0b1120;
+    color: #ffffff;
+}
+
+#theme-switch:checked ~ .page-wrapper .hero-title,
+#theme-switch:checked ~ .page-wrapper .section-header h2,
+#theme-switch:checked ~ .page-wrapper .about-card h3 {
+    color: #ffffff;
+}
+
+#theme-switch:checked ~ .page-wrapper .sun-icon { display: none; }
+#theme-switch:checked ~ .page-wrapper .moon-icon { display: block !important; }
+
+.moon-icon { display: none; }
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
+.main-header {
+  background-color: #052A44; 
+    
+    /* ფიგმას Padding: 16px 24px */
+    padding: 1.6rem 2.4rem; 
+    
+    /* პოზიციონირება */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* ზომები ფიგმას მიხედვით */
+    width: 100%;
+    max-width: 124rem;      /* Fixed: 1,240px */
+    min-height: 8.6rem;     /* Hug: 86px */
+    margin: 5rem auto 0;    /* Top: 50px, Left/Right: auto (ცენტრირება) */
+    
+    /* ვიზუალი */
+    border-radius: 1.2rem;  /* Radius: 12px */
+    box-sizing: border-box; /* რომ padding-მა ზომა არ გაზარდოს */
+
+    /* Layout (რადგან Frame-ში ყველაფერი გვერდიგვერდაა) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+  
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* დაამატე ესენი: */
+    width: 100%;                /* იკავებს მთელ სიგანეს */
+    max-width: 124.0rem;        /* შენი ფიგმის Frame 981-ის სიგანე (1240px) */
+    margin: 0 auto;             /* აცენტრებს მთლიან კონტეინერს ეკრანის შუაში */
+    padding: 0 2.4rem;          /* გვერდებზე 24px დაშორება, რომ ლოგო კედელს არ მიეკრას */
+    height: 8.6rem;             /* შენი ფიგმის სიმაღლე (86px) */
+}
+
+.logo a {
+    
+    color: #FFFFFF;             /* Colors: #FFFFFF */
+    text-decoration: none;      /* ლინკის ხაზის მოსაშორებლად */
+
+    /* Typography სექციიდან */
+    font-family: 'Poppins', sans-serif; /* Font: Poppins */
+    font-weight: 500;           /* Weight: 500 (Medium) */
+    font-size: 2.0rem;          /* Size: 20px */
+    line-height: 1;             /* Line height: 100% */
+    letter-spacing: 0;          /* Letter spacing: 0% */
+
+    /* Layout სექციიდან (სურვილისამებრ) */
+    display: inline-block;          /* რომ ზომა ტექსტის გარშემო იყოს */
+    width: 15.9rem;             /* Width: 159px */
+    height: 3.0rem;             /* Height: 30px */
+}
+
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* მზე/მთვარის აიკონები */
+.theme-toggle-label img {
+    width: 2.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-toggle-label img:hover {
+    filter: drop-shadow(0 0 0.8rem #E8D37E);
+    transform: rotate(15deg) scale(1.1);
+}
+  
+
+.btn-sign-in {
+    color: #FFFFFF !important;    /* !important აიძულებს ფერს გახდეს თეთრი */
+    text-decoration: none !important; /* აშორებს ხაზს ნებისმიერ შემთხვევაში */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;            /* 16px */
+    display: inline-block;        /* უკეთესი კონტროლისთვის */
+}
+
+/* Free Trial ღილაკის გამოძახება */
+.btn-free-trial {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem; /* 16px */
+    background-color: #FFFFFF; /* მაგალითად თეთრი ფონი */
+    color: #052A44;
+    padding: 1.2rem 2.4rem; /* 12px 24px */
+    border-radius: 0.8rem; /* 8px */
+}
+/* ბურგერ მენიუ */
+.burger-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.burger-btn span {
+    width: 2.8rem;
+    height: 0.3rem;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+.nav-links {
+    display: none; /* მობაილზე თავიდან დამალულია */
+    position: relative;
+    justify-content: space-betweenS;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #002B44;
+    list-style: none;
+    padding: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 10rem 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.8rem;
+
+}
+
+.nav-links a:hover { color: #E8D37E; }
+
+/* ბურგერის ამუშავება */
+#burger-toggle:checked ~ .nav-links {
+    display: flex;
+}
+
+/* ბურგერის ანიმაცია X-ად */
+#burger-toggle:checked ~ .burger-btn span:nth-child(1) { transform: translateY(0.8rem) rotate(45deg); }
+#burger-toggle:checked ~ .burger-btn span:nth-child(2) { opacity: 0; }
+#burger-toggle:checked ~ .burger-btn span:nth-child(3) { transform: translateY(-0.8rem) rotate(-45deg); }
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    gap: 4rem;
+    text-align: center;
+
+}
+
+ .hero-content  {
+
+    
+ }
+.hero-title {
+    font-size: 4.5rem; /* 45px მობაილზე */
+    color: #002B44;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    
+}
+
+.hero-title span {
+    color:#E8D37E; 
+}
+
+.hero-description {
+    font-size: 1.8rem;
+    color: #666666;
+    margin-bottom: 3rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 2rem;
+    border-bottom: 1rem solid #E8D37E;
+}
+/* მთავარი კონტეინერი */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 58.8rem; /* 588px */
+    height: 53.8rem;    /* 538px */
+    margin: 0 auto;
+}
+
+.hero__visual-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.hero-bg-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 53.0rem;
+    height: 39.0rem;
+    background-color: #E9E07D;
+    border-radius: 4.0rem;
+    z-index: 1;
+}
+
+/* ყვითელი ფონი */
+.hero__bg-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 53.0rem;
+    height: 39.0rem;
+    background-color: #E9E07D;
+    border-radius: 4.0rem;
+    z-index: 1;
+}
+
+/* მთავარი ფოტო */
+.hero__main-img {
+    position: absolute;
+    bottom: 0;
+    right: 2.0rem;
+    height: 52.0rem;
+    z-index: 2;
+    object-fit: contain;
+}
+
+/* ბარათების კონტეინერი - სურათზე ისინი ერთ სვეტზეა */
+.hero__stats {
+    position: absolute;
+    top: 5.0rem;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* დაშორება ბარათებს შორის */
+}
+
+/* ბარათების საერთო სტილი */
+.stat-card {
+    background: #FFFFFF;
+    padding: 2.0rem;
+    border-radius: 2.0rem;
+    box-shadow: 0 1.0rem 3.0rem rgba(0, 0, 0, 0.08);
+    width: 14.3rem;
+    height: 10.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.0rem;
+    border-radius: 1.37rem;
+}
+
+/* ტექსტების სტილი */
+.stat-card__title {
+    font-size: 1.3rem;
+    color: #052A44;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stat-card__text {
+    font-size: 1.1rem;
+    color: #777;
+    margin: 0;
+}
+
+.stat-card__value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #052A44;
+    margin: 0;
+}
+
+/* ლურჯი პლუსის აიქონი */
+.stat-card__icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: #052A44;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+/* ავატარების განლაგება (Overlap) */
+.stat-card__avatars {
+    display: flex;
+    justify-content: center;
+    padding-left: 1.0rem;
+}
+
+.stat-card__avatars img {
+    width: 3.0rem;
+    height: 3.0rem;
+    border-radius: 50%;
+    border: 0.2rem solid #fff;
+    margin-left: -1.0rem; /* ერთმანეთზე გადაფარვა */
+    object-fit: cover;
+}
+/* ყვითელი ფონი */
+.background-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%; /* ზომა მთავარ კონტეინერთან მიმართებაში */
+    height: 80%;
+    background-color: #E6E0AC; /* სურათიდან აღებული ფერი */
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* გოგონას ფოტო */
+.student-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%; /* კონტეინერის სრული სიმაღლე */
+    z-index: 2;
+    object-fit: contain;
+}
+
+/* საერთო სტილი ბარათებისთვის */
+.info-card {
+    position: absolute;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* მსუბუქი ჩრდილი */
+    z-index: 3;
+    width: 220px; /* ფიქსირებული სიგანე */
+    text-align: center;
+}
+
+/* ბარათების ინდივიდუალური პოზიციონირება */
+.users-card {
+    top: 50px;
+    left: 0;
+}
+
+.members-card.top {
+    top: 180px;
+    left: 30px;
+}
+
+.members-card.bottom {
+    bottom: 50px;
+    left: 20px;
+}
+
+/* ტექსტის სტილები ბარათებში */
+.card-label {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.card-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 10px 0;
+}
+
+/* პლუს აიქონი */
+.icon-plus {
+    width: 30px;
+    height: 30px;
+    background-color: #052A44; /* მუქი ლურჯი */
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/* ავატარების ჯგუფი */
+.avatar-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #FFF; /* თეთრი ჩარჩო გადაფარვისთვის */
+    margin-left: -10px; /* ერთმანეთზე გადაფარვა */
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 1.6rem 4rem;
+    background-color: #002B44;
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #E8D37E;
+    color: #002B44;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   5. ABOUT US (Grid Cards)
+   ========================================= */
+.about-section { padding: 8rem 0; }
+
+.section-header h2 {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: #002B44;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.about-card {
+    padding: 4rem 3rem;
+    background: rgba(0, 43, 68, 0.03);
+    border-radius: 2rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-1rem);
+    background: rgba(232, 211, 126, 0.2);
+}
+
+.icon-box { font-size: 4.5rem; margin-bottom: 2rem; }
+.about-card h3 { font-size: 2.2rem; color: #002B44; margin-bottom: 1.5rem; }
+
+/* =========================================
+   6. RESPONSIVE (Desktop 1024px+)
+   ========================================= */
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        background: transparent;
+    }
+
+    .burger-btn { display: none; }
+
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12rem 0;
+    }
+
+    .hero-title { font-size: 6.4rem; } /* 64px დესკტოპზე */
+
+    .about-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main-header {
+    background-color: $primary-blue;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo a {
+        color: $white;
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    // მზე/მთვარის ეფექტი
+    .theme-toggle-label img {
+        width: 2.4rem;
+        cursor: pointer;
+        transition: $transition;
+        
+        &:hover {
+            filter: drop-shadow(0 0 0.8rem $accent-yellow);
+            transform: rotate(15deg) scale(1.1);
+        }
+    }
+
+    // ბურგერ ღილაკი
+    .burger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        cursor: pointer;
+
+        span {
+            width: 2.8rem;
+            height: 0.3rem;
+            background-color: $white;
+            transition: $transition;
+        }
+
+        @include respond-to("desktop") { display: none; }
+    }
+
+    .nav-links {
+        display: none; // მობაილზე დამალულია
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $primary-blue;
+        padding: 3rem;
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        @include respond-to("desktop") {
+            display: flex;
+            position: static;
+            flex-direction: row;
+            padding: 0;
+            width: auto;
+        }
+
+        a {
+            color: $white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            &:hover { color: $accent-yellow; }
+        }
+    }
+}
+
+// ბურგერის გახსნა
+#burger-toggle:checked ~ .nav-links {
+    display: flex;
+}
+
+// ბურგერის ანიმაცია (X)
+#burger-toggle:checked ~ .burger-btn {
+    span:nth-child(1) { transform: translateY(0.8rem) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-0.8rem) rotate(-45deg); }
+}
