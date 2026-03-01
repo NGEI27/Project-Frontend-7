@@ -1,0 +1,12 @@
+@mixin footer-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #071210;
+            margin:0 0 0.8rem 0;
+        }
+}
