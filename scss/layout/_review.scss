@@ -3,11 +3,13 @@
 .review {
     font-family: $ff-poppins-reg;
     padding: 3.2rem 2.4rem 0 2.4rem;
-    width: 27.2rem;
+    
 
     &-wrapper {
         font-family: $ff-poppins-reg;
         width: 27.2rem;
+        margin: 0 auto;
+        
     }
     &-header {
         text-align: center;
@@ -107,6 +109,7 @@
         .review {
             padding: 0 8rem 0 7rem;
             width: 90%;
+
             &-wrapper {
                 width: 100%;
             }
