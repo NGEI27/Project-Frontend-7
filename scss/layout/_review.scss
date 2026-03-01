@@ -1,0 +1,211 @@
+@use '../abstracts/variables' as*;
+@use '../abstracts/mixins' as*;
+.review {
+    font-family: $ff-poppins-reg;
+    padding: 3.2rem 2.4rem 0 2.4rem;
+    
+
+    &-wrapper {
+        font-family: $ff-poppins-reg;
+        width: 27.2rem;
+        margin: 0 auto;
+        
+    }
+    &-header {
+        text-align: center;
+           
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #183B56;
+        }
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #5A7184;
+        }
+    }
+    &-card-cont {
+        display: grid;
+        gap: 2.4rem;
+        margin-top: 3.2rem;
+        justify-content: center;
+    }
+    &-card {
+        width: 26.2rem;
+        height: 18.3rem;
+        background-color: #FFFFFF;
+        padding: 2.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        border-radius: 1rem;
+        box-shadow: 1.31px 2.62px 18.34px 0 rgba(0, 0, 0, 0.08);
+
+        &-header {
+            height: 4.6rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.6rem;
+            margin:2rem 4rem;
+
+            img {
+                width: 4.6rem;
+                height: 4.6rem;
+                border-radius: 50%;
+            }
+        }
+        &-text {
+            color: rgba(18, 20, 29, 1);
+
+            p{
+                margin: 0;
+            }
+
+            strong {
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+            small {
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+        }
+        &-body {
+            width: 22rem;
+            height: 80px;
+            margin: 0 20px 20px 20px ;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #12141D;
+            text-align: center;
+        }
+    }
+    &-btn-more {
+        width: 8.9rem;
+        height: 3.7rem;
+        background-color: #052A44;
+        padding: 8px 12px;
+        color: #FFFFFF;
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 0.8rem;
+        border: none;
+        margin: 3.2rem 9.1rem;
+
+        &:hover {
+            background-color: #183B56;
+            cursor: pointer;
+        }
+    }
+    &-arrow-btn {
+        display: none;
+    }
+}
+    //desktop styles
+    @media (min-width:768px ) {
+        .review {
+            padding: 0 8rem 0 7rem;
+            width: 90%;
+
+            &-wrapper {
+                width: 100%;
+            }
+            &-header {
+                text-align: center;
+                h2 {
+                    color: #000000;
+                    font-size: 4.2rem;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    color: #071210;
+                    margin-top: 0;
+                }
+            }
+            &-card-cont {
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+            }
+            &-card {
+                width: 40rem;
+                height: 23rem;
+                padding: 3.2rem;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 2px 4px 28px 0 rgba(0, 0, 0, 0.08);
+
+                &-header {
+                    height: 7rem;
+                    gap: 2.4rem;
+                }
+                img {
+                    width: 7rem;
+                    height: 7rem;
+                }
+                &-text {
+                    strong {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                    small {
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                    }
+                }
+                &-body {
+                    width: 33.6rem;
+                    height: 7.2px;
+                    margin: 0 32px 32px 32px ;
+                    font-size: 1.6rem;
+                }
+            }
+            &-btn-more {
+                display: none;
+            }
+            &-arrow-btn {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1.2rem;
+                margin-top: 6rem;
+
+                .prev {
+                    width: 4.8rem;
+                    height: 4.9rem;
+                    border: none;
+                    border-radius: 0.6rem;
+                    gap: 1rem;
+
+                    &:hover {
+                    background-color: #183B56;
+                    cursor: pointer;
+                        p {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+                .next {
+                    width: 4.8rem;
+                    height: 4.9rem;
+                    border: none;
+                    border-radius: 0.6rem;
+                    gap: 1rem;
+
+                    &:hover {
+                    background-color: #183B56;
+                    cursor: pointer;
+                        p {
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }

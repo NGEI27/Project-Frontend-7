@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as *;
+
+.contact-us {
+    font-family: '$ff-poppins-reg';
+    margin: 0 auto;
+    width: 90%;
+
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 2.4rem 1.3rem;
+        gap: 1.6rem;
+        background-color: #E8DB84;
+        border-radius: 1rem;
+    }
+    &-header {
+        font-family: '$ff-poppins-reg';
+        color: #000000;
+        text-align: center;
+        
+        h2{
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin: 0;
+        }
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
+    &-form{
+        display: grid;
+        grid-template-columns: 1fr; 
+        padding: 2rem 2.4rem;
+        gap: 1.2rem;
+    }
+     input {
+        width: 80%;
+        padding: 2rem 2.4rem;
+        border-radius: 0.8rem;
+        border: none;
+        background-color: #FFFFFF;
+        color: #1E1E1E;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    .input-mail {
+        display: grid;
+        grid-template-columns: 1fr; 
+        padding: 0 2.4rem;
+        gap: 1.2rem;
+    }
+    .description {
+        padding: 2rem 2.4rem;
+
+        textarea {
+            height: 20.7rem;
+            width: 80%;
+            padding: 2rem 2.4rem;
+            border-radius: 0.8rem;
+            border: none;
+            background-color: #FFFFFF;
+            color: #1E1E1E;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+    }
+    &-btn {
+        display: flex;
+        justify-self: center;
+        border-radius: 0.8rem;
+
+        button {
+            width: 17.6rem;
+            height: 5.4rem;
+            background-color: #052A44;
+            padding: 1.5rem 4.3rem;
+            border-radius: 0.8rem;
+            gap: 1rem;
+            color:#FFFFFF ;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        &:hover {
+            background-color: #183B56;
+            opacity: 0.9;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .contact-us {
+        padding: 4rem 3.2rem;
+        gap: 3.2rem;
+
+        &-header {
+            h2{
+                font-size: 4.2rem;
+                font-weight: 600;
+            }
+            p {
+                font-size: 1.8rem;
+                font-weight: 400;
+            }
+        }
+        &-form{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            padding: 2rem 2.4rem;
+            gap: 1.2rem;
+        }
+        .input-mail {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            padding: 0 2.4rem;
+            gap: 1.2rem;
+        }
+        .description {
+            padding: 1.9rem 2.4rem;
+
+            textarea {
+                width: 90%;
+            }
+        }
+    }
+}

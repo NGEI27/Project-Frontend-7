@@ -1,0 +1,91 @@
+@use '../abstracts/variables' as*;
+@use '../abstracts/mixins' as*;
+.footer {
+    font-family: $ff-poppins-reg;
+    padding: 2rem 1rem;
+    
+    &-cont {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        &-careerpath {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 2.4rem;
+            
+            h3 {
+                font-size: 2rem;
+                color: #052A44;
+                font-weight: 500;
+                margin:0 0 0.8rem 0;
+            }
+            p {
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: #071210;
+                margin:0 0 0.8rem 0;
+            }
+        }
+        &-social {
+            @include footer-cont;
+            gap: 0.9rem;
+        }
+           
+        a {
+            display: inline-block;
+            padding: 1rem;  
+            margin: 0.9rem;        
+            border: 2px solid #071210;
+            border-radius: 50%;     
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s ease, color 0.2s ease;
+
+                &:hover,
+                &:focus {
+                    color: #fff;
+                }
+
+                img{
+                    display: block;
+                    width: 100%; 
+                }
+        }
+        &-contact {
+            @include footer-cont;
+            gap: 0.9rem;
+            margin: 2.4rem 4.6rem 2.4rem 4.6rem;
+        }
+    }
+    hr {
+        display: none;
+    }
+    .copyright {
+        display: none;
+    }
+
+    /* desktop styles */
+    @media (min-width:768px ) {
+        .footer-cont {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .footer-careerpath {
+            text-align: left;
+        }
+        hr {
+            display: block;
+            width: 90%;
+            margin-top: 4rem;
+        }
+        .copyright {
+            display: block;
+            text-align: center;
+            margin-top: 2.4rem;
+
+        }
+    }
+}
